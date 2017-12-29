@@ -2,6 +2,7 @@
 using System.Linq;
 using Investigate;
 using Chapter2;
+using Chapter3;
 
 namespace ConsoleApplication1
 {
@@ -9,7 +10,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            SimpleDelegateUse.Main();
+            CompareToDefault.Main();
         }
     }
 }
