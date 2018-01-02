@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skit", "Skit", "{EE2FEF2A-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter2", "Chapter2\Chapter2.csproj", "{589FBC86-D7DE-4D39-B880-86F141957367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter3", "Chapter3\Chapter3.csproj", "{37B04D41-58A6-41C7-A297-91BAF5DA396F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Chapter3\Generics.csproj", "{37B04D41-58A6-41C7-A297-91BAF5DA396F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

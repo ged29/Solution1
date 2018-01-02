@@ -10,7 +10,12 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            CompareToDefault.Main();
+            var cntEnumerable = new CountingEnumerable();
+
+            foreach (var n in cntEnumerable)
+            {
+                Console.WriteLine(n);
+            }
         }
     }
 }

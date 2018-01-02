@@ -54,9 +54,9 @@
       <Project>{589FBC86-D7DE-4D39-B880-86F141957367}</Project>
       <Name>Chapter2</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Chapter3\Chapter3.csproj">
+    <ProjectReference Include="..\Chapter3\Generics.csproj">
       <Project>{37b04d41-58a6-41c7-a297-91baf5da396f}</Project>
-      <Name>Chapter3</Name>
+      <Name>Generics</Name>
     </ProjectReference>
     <ProjectReference Include="..\Investigate\Investigate.csproj">
       <Project>{135bc437-f725-489f-ade9-4004bde3de14}</Project>

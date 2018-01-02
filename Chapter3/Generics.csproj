@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompareToDefault.cs" />
+    <Compile Include="CountingEnumerable.cs" />
+    <Compile Include="ТуреИісЬРіе1ё.cs" />
+    <Compile Include="Pair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
