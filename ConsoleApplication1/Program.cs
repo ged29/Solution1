@@ -18,31 +18,33 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var largeGPath = Path.Combine(basePath, "GraphFiles", "largeG.txt");
             var mediumGPath = Path.Combine(basePath, "GraphFiles", "mediumG.txt");
             var tinyGPath = Path.Combine(basePath, "GraphFiles", "tinyG.txt");
+            var unCycledGPath = Path.Combine(basePath, "GraphFiles", "unCycledG.txt");
 
-            Graph g = Graph.CreateFromFile(tinyGPath);
-            int initVertex = 0;
-            Paths gPaths = new Paths(g, initVertex);
+            SymbolGraph.Test(Path.Combine(basePath, "GraphFiles", "movies.txt"), '/', "Bacon, Kevin");
 
-            for (int v = 0; v < g.V; v++)
-            {
-                Console.Write(v + " to " + initVertex + ": ");
-                foreach (int x in gPaths.PathTo(v))
-                {
-                    if (x == v)
-                    {
-                        Console.Write(x);
-                    }
-                    else
-                    {
-                        Console.Write(x + "-");
-                    }
-                }
+            //Graph g = Graph.CreateFromFile(tinyGPath);            
+            //CC.Test(g);
+            //BfsPaths gPaths = new BfsPaths(g, initVertex);
 
-                Console.WriteLine();
-            }
+            //for (int v = 0; v < g.V; v++)
+            //{
+            //    Console.Write(v + " to " + initVertex + ": ");
+            //    foreach (int x in gPaths.PathTo(v))
+            //    {
+            //        if (x == v)
+            //        {
+            //            Console.Write(x);
+            //        }
+            //        else
+            //        {
+            //            Console.Write(x + "-");
+            //        }
+            //    }
+
+            //    Console.WriteLine();
+            //}
         }
     }
 }

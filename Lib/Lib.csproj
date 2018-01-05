@@ -40,13 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BfsPaths.cs" />
+    <Compile Include="CC.cs" />
     <Compile Include="DepthFirstSearch.cs" />
     <Compile Include="Graph.cs" />
-    <Compile Include="Paths.cs" />
+    <Compile Include="DfsPaths.cs" />
+    <Compile Include="HasCycle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SymbolGraph.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="GraphFiles\mediumG.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GraphFiles\movies.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GraphFiles\routes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GraphFiles\unCycledG.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GraphFiles\tinyG.txt">
