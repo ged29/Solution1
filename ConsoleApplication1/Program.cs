@@ -22,29 +22,14 @@ namespace ConsoleApplication1
             var tinyGPath = Path.Combine(basePath, "GraphFiles", "tinyG.txt");
             var unCycledGPath = Path.Combine(basePath, "GraphFiles", "unCycledG.txt");
 
-            SymbolGraph.Test(Path.Combine(basePath, "GraphFiles", "movies.txt"), '/', "Bacon, Kevin");
+            Graph graph = Graph.CreateFromFile(tinyGPath);
+            GraphProperties graphProps = new GraphProperties(graph);
 
-            //Graph g = Graph.CreateFromFile(tinyGPath);            
-            //CC.Test(g);
-            //BfsPaths gPaths = new BfsPaths(g, initVertex);
-
-            //for (int v = 0; v < g.V; v++)
-            //{
-            //    Console.Write(v + " to " + initVertex + ": ");
-            //    foreach (int x in gPaths.PathTo(v))
-            //    {
-            //        if (x == v)
-            //        {
-            //            Console.Write(x);
-            //        }
-            //        else
-            //        {
-            //            Console.Write(x + "-");
-            //        }
-            //    }
-
-            //    Console.WriteLine();
-            //}
+            Console.WriteLine("eccentricity:" + graphProps.Eccentricity(3));
+            Console.WriteLine("diameter:" + graphProps.Diameter());
+            Console.WriteLine("radius:" + graphProps.Radius());
+            Console.WriteLine("centerVertexIndex:" + graphProps.CenterVertexIndex());
+            graphProps.Girth();
         }
     }
 }

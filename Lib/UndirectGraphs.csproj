@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2B52FA4-1AF8-4C29-925A-30F49EC50886}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{2A0FC89E-FFAE-4090-A902-64C1475DB274}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>Lib</RootNamespace>
+    <AssemblyName>Lib</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,33 +40,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="BfsPaths.cs" />
+    <Compile Include="CC.cs" />
+    <Compile Include="DegreesOfSeparation.cs" />
+    <Compile Include="DepthFirstSearch.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="DfsPaths.cs" />
+    <Compile Include="GraphProperties.cs" />
+    <Compile Include="HasCycle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SymbolGraph.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Chapter2\Chapter2.csproj">
-      <Project>{589FBC86-D7DE-4D39-B880-86F141957367}</Project>
-      <Name>Chapter2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Chapter3\Generics.csproj">
-      <Project>{37b04d41-58a6-41c7-a297-91baf5da396f}</Project>
-      <Name>Generics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Chapter5\Chapter5.csproj">
-      <Project>{AD8D1AAB-A583-40B1-84B4-887CF5302E42}</Project>
-      <Name>Chapter5</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Investigate\Investigate.csproj">
-      <Project>{135bc437-f725-489f-ade9-4004bde3de14}</Project>
-      <Name>Investigate</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Lib\UndirectGraphs.csproj">
-      <Project>{2A0FC89E-FFAE-4090-A902-64C1475DB274}</Project>
-      <Name>UndirectGraphs</Name>
-    </ProjectReference>
+    <Content Include="GraphFiles\mediumG.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GraphFiles\movies.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GraphFiles\routes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GraphFiles\unCycledG.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GraphFiles\tinyG.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

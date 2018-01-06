@@ -46,9 +46,9 @@ namespace Lib
             return marked[v];
         }
 
-        public IEnumerable<int> PathTo(int v)
+        public int[] PathTo(int v)
         {
-            if (!HasPathTo(v)) return Enumerable.Empty<int>();
+            if (!HasPathTo(v)) return new int[0];
 
             Stack<int> result = new Stack<int>();
             for (int x = v; x != initVertex; x = edgeTo[x])
@@ -57,7 +57,13 @@ namespace Lib
             }
 
             result.Push(initVertex);
-            return result;
+            return result.ToArray();
+        }
+
+        public int DistTo(int v)
+        {
+            int pathLen = PathTo(v).Length;
+            return pathLen == 0 ? 0 : pathLen - 1;
         }
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "ConsoleApplication1\Tester.csproj", "{F2B52FA4-1AF8-4C29-925A-30F49EC50886}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib", "Lib\Lib.csproj", "{2A0FC89E-FFAE-4090-A902-64C1475DB274}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndirectGraphs", "Lib\UndirectGraphs.csproj", "{2A0FC89E-FFAE-4090-A902-64C1475DB274}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investigate", "Investigate\Investigate.csproj", "{135BC437-F725-489F-ADE9-4004BDE3DE14}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Chapter3\Generics.csproj", "{37B04D41-58A6-41C7-A297-91BAF5DA396F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter5", "Chapter5\Chapter5.csproj", "{AD8D1AAB-A583-40B1-84B4-887CF5302E42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sedgewick", "Sedgewick", "{E4F352A4-5F23-452D-9AF2-9F77B647649D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectGraph", "DirectGraph\DirectGraph.csproj", "{855F2770-0ABF-4815-B26C-2781D0D966CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,13 +51,19 @@ Global
 		{AD8D1AAB-A583-40B1-84B4-887CF5302E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD8D1AAB-A583-40B1-84B4-887CF5302E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD8D1AAB-A583-40B1-84B4-887CF5302E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{855F2770-0ABF-4815-B26C-2781D0D966CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{855F2770-0ABF-4815-B26C-2781D0D966CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{855F2770-0ABF-4815-B26C-2781D0D966CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{855F2770-0ABF-4815-B26C-2781D0D966CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{2A0FC89E-FFAE-4090-A902-64C1475DB274} = {E4F352A4-5F23-452D-9AF2-9F77B647649D}
 		{589FBC86-D7DE-4D39-B880-86F141957367} = {EE2FEF2A-E59F-4AF3-AE45-253CBBB51F3F}
 		{37B04D41-58A6-41C7-A297-91BAF5DA396F} = {EE2FEF2A-E59F-4AF3-AE45-253CBBB51F3F}
 		{AD8D1AAB-A583-40B1-84B4-887CF5302E42} = {EE2FEF2A-E59F-4AF3-AE45-253CBBB51F3F}
+		{855F2770-0ABF-4815-B26C-2781D0D966CD} = {E4F352A4-5F23-452D-9AF2-9F77B647649D}
 	EndGlobalSection
 EndGlobal

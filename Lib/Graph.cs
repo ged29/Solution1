@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,13 +13,15 @@ namespace Lib
     {
         public int V { get; private set; }
         public int E { get; private set; }
-        private IList<IList<int>> adj;
+        public IList<IList<int>> adj;
+        public readonly string name;
 
-        public Graph(int v)
+        public Graph(int v, string name = null)
         {
             V = v;
             E = 0;
             adj = new List<IList<int>>(Enumerable.Range(0, v).Select(x => new List<int>()));
+            this.name = name;
         }
 
         public static Graph CreateFromFile(string filePath)
@@ -47,9 +51,37 @@ namespace Lib
             E += 1;
         }
 
-        public IEnumerable<int> Adj(int v)
+        public bool HasEdge(int v, int w)
+        {
+            return v <= V && w <= V && adj[v] != null && adj[v].Contains(w);
+        }
+
+        public IList<int> Adj(int v)
         {
             return adj[v];
+        }
+
+        public override string ToString()
+        {
+            string grapgName = name ?? "Unknow";
+            Collection<string> pairs = new Collection<string>();
+            Func<int, int, string> getPair = (from, to) => string.Format("{0}-{1}", from, to);
+
+            for (int from = 0; from < V; from++)
+            {
+                for (int inx = 0; inx < adj[from].Count; inx++)
+                {
+                    int to = adj[from][inx];
+                    if (!pairs.Contains(getPair(to, from)))
+                    {
+                        pairs.Add(getPair(from, to));
+                    }
+                }
+            }
+
+
+
+            return string.Format("Graph:{0}\n{1}", grapgName, String.Join("\n", pairs));
         }
     }
 }
