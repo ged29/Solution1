@@ -10,6 +10,7 @@ using Chapter5;
 using Lib;
 using System.Reflection;
 using System.IO;
+using DirectGraph;
 
 namespace ConsoleApplication1
 {
@@ -17,19 +18,18 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var mediumGPath = Path.Combine(basePath, "GraphFiles", "mediumG.txt");
-            var tinyGPath = Path.Combine(basePath, "GraphFiles", "tinyG.txt");
-            var unCycledGPath = Path.Combine(basePath, "GraphFiles", "unCycledG.txt");
+            //var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            //var mediumGPath = Path.Combine(basePath, "GraphFiles", "mediumG.txt");
+            //var tinyGPath = Path.Combine(basePath, "GraphFiles", "tinyG.txt");
+            //var unCycledGPath = Path.Combine(basePath, "GraphFiles", "unCycledG.txt");
 
-            Graph graph = Graph.CreateFromFile(tinyGPath);
-            GraphProperties graphProps = new GraphProperties(graph);
+            //Digraph digraph = new Digraph("tinyDAG.txt");
+            //DepthFirstOrder dfo = new DepthFirstOrder(digraph);
+            //Console.WriteLine("PreOrder: " + String.Join(",", dfo.PreOrder));
+            //Console.WriteLine("PostOrder: " + String.Join(",", dfo.PostOrder));
+            //Console.WriteLine("ReversePostOrder: " + String.Join(",", dfo.ReversePostOrder));
 
-            Console.WriteLine("eccentricity:" + graphProps.Eccentricity(3));
-            Console.WriteLine("diameter:" + graphProps.Diameter());
-            Console.WriteLine("radius:" + graphProps.Radius());
-            Console.WriteLine("centerVertexIndex:" + graphProps.CenterVertexIndex());
-            graphProps.Girth();
+            DirectGraph.FormCodeProject.TestClient.Test();
         }
     }
 }

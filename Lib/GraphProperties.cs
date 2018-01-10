@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Lib
 {
@@ -70,5 +71,69 @@ namespace Lib
             return minVertexIndex;
         }
 
+        public void Girth()
+        {
+            Dictionary<int, Dictionary<int, int>> bfsPaths = new Dictionary<int, Dictionary<int, int>>();
+
+            for (int inx = 0; inx < graph.V; inx++)
+            {
+                var bfsPath = new BfsPaths(graph, inx);
+                Console.WriteLine(string.Format("{0}:{1}", inx, bfsPath));
+                bfsPaths.Add(inx, bfsPath.edgeTo);
+            }
+
+            for (int v = 0; v < graph.V; v++)
+            {
+                IList<int> adjs = graph.Adj(v);
+                int adjsCount = adjs.Count;
+                if (adjsCount == 0 || adjsCount == 1) continue;  // in case of isolated node or node with one connection                
+                // here we know that v has at least 2 node adjacent to it
+                for (int inx = 0; inx < adjsCount; inx++)
+                {
+                    List<int> adjNodeIds = new List<int>(adjs); adjNodeIds.RemoveAt(inx);
+                    FindCircle(adjs[inx], adjNodeIds, bfsPaths, v);
+                }
+            }
+        }
+
+        private void FindCircle(int fromNodeId, IList<int> adjNodeIds, Dictionary<int, Dictionary<int, int>> bfsPaths, int filterById)
+        {
+            Stack<int> stack = new Stack<int>();
+            stack.Push(fromNodeId);
+
+            bool[] inspected = new bool[graph.V];
+            inspected[filterById] = true;
+            inspected[fromNodeId] = true;
+
+            IList<int> result = new List<int>();
+
+
+            while (stack.Count != 0)
+            {
+                var fromItem = stack.Pop();
+                result.Add(fromItem);
+
+                foreach (var kvp in bfsPaths[fromItem])
+                {
+                    var toItem = kvp.Key;
+
+                    if (kvp.Value == fromItem && !inspected[toItem]) // filter out the paths by fromItem value
+                    {
+                        if (adjNodeIds.Contains(kvp.Key))
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            stack.Push(toItem);
+                            inspected[toItem] = true;
+                        }
+                    }
+                }
+
+
+
+            }
+        }
     }
 }

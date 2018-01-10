@@ -1,0 +1,3 @@
+﻿https://www.codeproject.com/Articles/869059/Topological-sorting-in-Csharp
+http://www.koderdojo.com/blog/depth-first-search-algorithm-in-csharp-and-net-core
+http://www.executableintent.com/

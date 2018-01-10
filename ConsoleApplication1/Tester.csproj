@@ -63,6 +63,10 @@
       <Project>{AD8D1AAB-A583-40B1-84B4-887CF5302E42}</Project>
       <Name>Chapter5</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DirectGraph\DirectGraph.csproj">
+      <Project>{855F2770-0ABF-4815-B26C-2781D0D966CD}</Project>
+      <Name>DirectGraph</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Investigate\Investigate.csproj">
       <Project>{135bc437-f725-489f-ade9-4004bde3de14}</Project>
       <Name>Investigate</Name>

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Lib
 {
     public class BfsPaths
     {
         private bool[] marked;
-        private IDictionary<int, int> edgeTo;
+        public Dictionary<int, int> edgeTo;
         private readonly int initVertex;
 
         public BfsPaths(Graph g, int s)
@@ -64,6 +61,18 @@ namespace Lib
         {
             int pathLen = PathTo(v).Length;
             return pathLen == 0 ? 0 : pathLen - 1;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var kvp in edgeTo)
+            {
+                sb.AppendFormat(" {0}-{1} ", kvp.Key, kvp.Value);
+            }
+
+            return sb.ToString();
         }
     }
 }

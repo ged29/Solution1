@@ -7,8 +7,8 @@
     <ProjectGuid>{2A0FC89E-FFAE-4090-A902-64C1475DB274}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lib</RootNamespace>
-    <AssemblyName>Lib</AssemblyName>
+    <RootNamespace>UndirectGraphs</RootNamespace>
+    <AssemblyName>UndirectGraphs</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
