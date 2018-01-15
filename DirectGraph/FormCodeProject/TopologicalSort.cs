@@ -5,13 +5,13 @@ namespace DirectGraph.FormCodeProject
 {
     public class TopologicalSort<T> where T : IHaveDependencies<T>
     {
-        List<T> sorted;
-        Dictionary<T, bool> visited;
+        public List<T> sorted;
+        private Dictionary<T, bool> visited;
 
-        public TopologicalSort(IEnumerable<T> source)
+        public TopologicalSort(IEnumerable<T> source, IEqualityComparer<T> comparer = null)
         {
             sorted = new List<T>();
-            visited = new Dictionary<T, bool>();
+            visited = new Dictionary<T, bool>(comparer);
 
             foreach (T item in source)
             {

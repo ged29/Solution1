@@ -45,7 +45,7 @@ namespace DirectGraph
             }
         }
 
-        private void AddEdge(int v, int w) // the edge is v -> w 
+        public void AddEdge(int v, int w) // the edge is v -> w 
         {
             adjList[v].Add(w);
             EdgeCount += 1;
