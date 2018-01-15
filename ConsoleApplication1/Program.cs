@@ -11,6 +11,7 @@ using Lib;
 using System.Reflection;
 using System.IO;
 using DirectGraph;
+using System.Diagnostics;
 
 namespace ConsoleApplication1
 {
@@ -23,14 +24,21 @@ namespace ConsoleApplication1
             //var tinyGPath = Path.Combine(basePath, "GraphFiles", "tinyG.txt");
             //var unCycledGPath = Path.Combine(basePath, "GraphFiles", "unCycledG.txt");
 
-            //Digraph digraph = new Digraph("tinyDAG.txt");
-            //DepthFirstOrder dfo = new DepthFirstOrder(digraph);
+            Stopwatch sw = new Stopwatch(); 
+
+            Digraph digraph = new Digraph("tinyDAG.txt");
+            sw.Reset();
+            sw.Start();
+            DepthFirstOrder dfo = new DepthFirstOrder(digraph);
+            sw.Stop();
+            Console.WriteLine(sw.ElapsedTicks);
+
             //Console.WriteLine("PreOrder: " + String.Join(",", dfo.PreOrder));
             //Console.WriteLine("PostOrder: " + String.Join(",", dfo.PostOrder));
-            //Console.WriteLine("ReversePostOrder: " + String.Join(",", dfo.ReversePostOrder));
+            Console.WriteLine("ReversePostOrder: " + String.Join(",", dfo.ReversePostOrder));
 
             //DirectGraph.FormCodeProject.TestClient.Test();          
-            DirectGraph.FromRosettacode.TestClient.Test();
+            //DirectGraph.FromRosettacode.TestClient.Test();
 
         }
     }

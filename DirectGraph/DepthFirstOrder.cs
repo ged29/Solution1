@@ -12,8 +12,8 @@ namespace DirectGraph
 
         public DepthFirstOrder(Digraph digraph)
         {
-            preOrder = new Queue<int>();
-            postOrder = new Queue<int>();
+            //preOrder = new Queue<int>();
+            //postOrder = new Queue<int>();
             reversePostOrder = new Stack<int>();
             visited = new bool[digraph.NodeCount];
             inStack = new bool[digraph.NodeCount];
@@ -31,20 +31,29 @@ namespace DirectGraph
         {
             Stack<int> stack = new Stack<int>();
             stack.Push(s);
-            visited[s] = true;
 
             while (stack.Count > 0)
             {
-                int v = stack.Peek();
-                stack.Pop();
+                int node = stack.Peek();
+                visited[node] = true;
+                inStack[node] = true;
+                IList<int> adjs = digraph.Adjacent(node);
 
-                foreach (int w in digraph.Adjacent(v)) // 6 1 5 
+                int aInx = 0;
+                while (aInx < adjs.Count && visited[adjs[aInx]])
                 {
-                    if (!visited[w])
-                    {
-                        stack.Push(w);
-                        visited[s] = true;
-                    }
+                    if (inStack[adjs[aInx]]) return false;
+                    aInx += 1;
+                }
+
+                if (aInx == adjs.Count)
+                {
+                    inStack[node] = false;
+                    reversePostOrder.Push(stack.Pop());
+                }
+                else
+                {
+                    stack.Push(adjs[aInx]);
                 }
             }
 
@@ -53,7 +62,7 @@ namespace DirectGraph
 
         private void DfsRec(Digraph digraph, int v)
         {
-            preOrder.Enqueue(v);
+            //preOrder.Enqueue(v);
             visited[v] = true;
 
             foreach (int w in digraph.Adjacent(v)) // 6 1 5 
@@ -64,7 +73,7 @@ namespace DirectGraph
                 }
             }
 
-            postOrder.Enqueue(v);
+            //postOrder.Enqueue(v);
             reversePostOrder.Push(v);
         }
 
