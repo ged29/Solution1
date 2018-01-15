@@ -50,6 +50,8 @@
     <Compile Include="FormCodeProject\TopologicalSort.cs" />
     <Compile Include="Kahn\KahnTopoSort.cs" />
     <Compile Include="NetworkSort\NetworkSort.cs" />
+    <Compile Include="FromRosettacode\TestClient.cs" />
+    <Compile Include="FromRosettacode\TopologicalSorter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamedGraph\TopoSortEnumerator.cs" />
     <Compile Include="StreamedGraph\WaitList.cs" />

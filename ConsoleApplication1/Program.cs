@@ -11,6 +11,7 @@ using Lib;
 using System.Reflection;
 using System.IO;
 using DirectGraph;
+using System.Diagnostics;
 
 namespace ConsoleApplication1
 {
@@ -23,18 +24,23 @@ namespace ConsoleApplication1
             //var tinyGPath = Path.Combine(basePath, "GraphFiles", "tinyG.txt");
             //var unCycledGPath = Path.Combine(basePath, "GraphFiles", "unCycledG.txt");
 
+            Stopwatch sw = new Stopwatch(); 
+
             Digraph digraph = new Digraph("tinyDAG.txt");
+            sw.Reset();
+            sw.Start();
             DepthFirstOrder dfo = new DepthFirstOrder(digraph);
-            Console.WriteLine("PreOrder: " + String.Join(",", dfo.PreOrder));
-            Console.WriteLine("PostOrder: " + String.Join(",", dfo.PostOrder));
+            sw.Stop();
+            Console.WriteLine(sw.ElapsedTicks);
+
+            //Console.WriteLine("PreOrder: " + String.Join(",", dfo.PreOrder));
+            //Console.WriteLine("PostOrder: " + String.Join(",", dfo.PostOrder));
             Console.WriteLine("ReversePostOrder: " + String.Join(",", dfo.ReversePostOrder));
 
-            //DirectGraph.FormCodeProject.TestClient.TestDirectInputTopologicalSort1();
-            //DirectGraph.FormCodeProject.TestClient.TestDirectInputTopologicalSort2();
-            //DirectGraph.FormCodeProject.TestClient.TestFileInputTopologicalSort();
+            //DirectGraph.FormCodeProject.TestClient.Test();          
+            //DirectGraph.FromRosettacode.TestClient.Test();
 
-            //Console.WriteLine("Khan sort: " + String.Join(",", (new DirectGraph.Kahn.KahnTopoSort(digraph)).sorted));
-            DirectGraph.NetworkSort.NetworkSort.Test();
+            DirectGraph.FormCodeProject.TestClient.Test();
         }
     }
 }
