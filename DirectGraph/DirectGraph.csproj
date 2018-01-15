@@ -47,6 +47,8 @@
     <Compile Include="FormCodeProject\Item.cs" />
     <Compile Include="FormCodeProject\TestClient.cs" />
     <Compile Include="FormCodeProject\TopologicalSort.cs" />
+    <Compile Include="FromRosettacode\TestClient.cs" />
+    <Compile Include="FromRosettacode\TopologicalSorter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

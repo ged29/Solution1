@@ -5,6 +5,7 @@ namespace DirectGraph
     public class DepthFirstOrder
     {
         private bool[] visited;
+        private bool[] inStack;
         private Queue<int> preOrder;
         private Queue<int> postOrder;
         private Stack<int> reversePostOrder;
@@ -15,6 +16,7 @@ namespace DirectGraph
             postOrder = new Queue<int>();
             reversePostOrder = new Stack<int>();
             visited = new bool[digraph.NodeCount];
+            inStack = new bool[digraph.NodeCount];
 
             for (int v = 0; v < digraph.NodeCount; v++)
             {
@@ -25,7 +27,31 @@ namespace DirectGraph
             }
         }
 
-        private void Dfs(Digraph digraph, int v)
+        private bool Dfs(Digraph digraph, int s)
+        {
+            Stack<int> stack = new Stack<int>();
+            stack.Push(s);
+            visited[s] = true;
+
+            while (stack.Count > 0)
+            {
+                int v = stack.Peek();
+                stack.Pop();
+
+                foreach (int w in digraph.Adjacent(v)) // 6 1 5 
+                {
+                    if (!visited[w])
+                    {
+                        stack.Push(w);
+                        visited[s] = true;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        private void DfsRec(Digraph digraph, int v)
         {
             preOrder.Enqueue(v);
             visited[v] = true;
@@ -34,7 +60,7 @@ namespace DirectGraph
             {
                 if (!visited[w])
                 {
-                    Dfs(digraph, w);
+                    DfsRec(digraph, w);
                 }
             }
 

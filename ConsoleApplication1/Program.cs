@@ -29,7 +29,9 @@ namespace ConsoleApplication1
             //Console.WriteLine("PostOrder: " + String.Join(",", dfo.PostOrder));
             //Console.WriteLine("ReversePostOrder: " + String.Join(",", dfo.ReversePostOrder));
 
-            DirectGraph.FormCodeProject.TestClient.Test();
+            //DirectGraph.FormCodeProject.TestClient.Test();          
+            DirectGraph.FromRosettacode.TestClient.Test();
+
         }
     }
 }
